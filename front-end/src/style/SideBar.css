@@ -1,0 +1,27 @@
+.sidebar {
+  width: 90px;
+  height: 100vh;
+  background-color: #FFF;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(0); 
+  flex-shrink: 0;
+  z-index: 1000;
+}
+
+@media (max-width: 868px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px; 
+    height: 100vh;
+    background-color: #FFF;
+    transform: translateX(-100%);
+    z-index: 1000;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .sidebar.mobile-active {
+    transform: translateX(0);
+  }
+}

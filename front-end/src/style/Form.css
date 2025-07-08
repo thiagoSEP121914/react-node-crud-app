@@ -1,0 +1,102 @@
+.container {
+  min-height: auto;
+  width: 100%;
+  max-width: 1000px; 
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0 auto;
+}
+
+.userInfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 0;
+  font-size: 1rem;
+  border-bottom: 1px solid #ddd;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.biografy {
+  background-color: #f9f9f9;
+  padding: 1.5rem 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  max-width: 700px;
+  margin: 2rem auto; 
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+.biografy h2 {
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #2c3e50;
+  text-align: center;
+}
+
+
+.biografy .MuiTextField-root {
+  margin-top: 0;
+}
+
+.btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1600px;
+    padding: 3rem; 
+  }
+
+
+  .grid {
+    gap: 0.5rem; 
+  }
+
+   .biografy {
+    padding: 0.5rem;
+    margin: 0.5rem;
+  }
+
+  .biografy h2 {
+    font-size: 1.25rem;
+  }
+
+  .btn {
+    font-size: 1.25rem; 
+    padding: 1rem 2rem;
+  }
+
+
+  .grid .MuiOutlinedInput-root {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+  
+   .grid .MuiOutlinedInput-input {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+
+}

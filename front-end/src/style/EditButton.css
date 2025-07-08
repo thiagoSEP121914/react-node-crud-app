@@ -1,0 +1,18 @@
+.edit-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 4px;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 12px;
+}
+
+.edit-button:hover {
+  transform: scale(1.3);
+  opacity: 0.9;
+}

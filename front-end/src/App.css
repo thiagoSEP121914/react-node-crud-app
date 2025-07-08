@@ -1,0 +1,29 @@
+#root {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #FFF;
+}
+
+.content {
+  flex: 1;
+  padding: 2rem;
+  background-color: #F0F0F0 ;  
+  overflow-x: hidden;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
