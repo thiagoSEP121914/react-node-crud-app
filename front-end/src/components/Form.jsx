@@ -18,6 +18,7 @@ function Form() {
   const [cpf, setCpf] = useState("");
   const [nome, setNome] = useState("");
   const [idade, setIdade] = useState("");
+  const [image, setImage] = useState(null);
   const [cep, setCep] = useState("");
   const [estado, setEstado] = useState("");
   const [cidade, setCidade] = useState("");
@@ -94,6 +95,17 @@ function Form() {
     setBiografia(newValue);
   };
 
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+    
+    const reader = new FileReader();
+    reader.onload  = () => {
+      setImage(reader.result);
+    }
+    reader.readAsDataURL(file);
+  }
+
   async function fillFormWithData() {
     try {
       const data = await findCep(cep);
@@ -110,6 +122,7 @@ function Form() {
     setCpf("");
     setNome("");
     setIdade("");
+    setImage("")
     setBiografia("");
     setCep("");
     setEstado("");
@@ -149,7 +162,7 @@ function Form() {
       cpf: cpf.replace(/\D/g, ""),
       nome,
       idade: Number(idade),
-      caminhoImage: "",
+      caminhoImage: image,
       biografia,
       endereco: {
         cep: cep.replace(/\D/g, ""),
@@ -170,7 +183,7 @@ function Form() {
       }
 
       const user = instantiateUser();
-      
+
       if (selectedUser) {
         await updateUser(selectedUser.cpf, user);
         toast.success("Usuario Atualizado com sucesso!");
@@ -201,7 +214,7 @@ function Form() {
       setRua(selectedUser.endereco?.rua || "");
       setNumero(selectedUser.endereco?.numero || "");
       return;
-    } 
+    }
     clearAllFields();
   }, [selectedUser]);
 
@@ -209,16 +222,23 @@ function Form() {
     <>
       <form className="container" onSubmit={handleSubmit}>
         <div className="userInfo">
-          <Avatar
+         
+         <div className="image-container">
+             <Avatar
+              src={image}
             sx={{
               width: 80,
               height: 80,
               bgcolor: deepPurple[500],
             }}
           />
+          <Button component="label">
+            Selecionar imagem
+            <input hidden accept="image/*" type="file" onChange={handleFileChange}  />
+          </Button>
+         </div>
           <div className="v-container">
-            <h2>Name</h2>
-            <p>Email</p>
+            <h2>{nome}</h2>
           </div>
         </div>
 

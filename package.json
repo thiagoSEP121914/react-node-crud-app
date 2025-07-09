@@ -1,0 +1,11 @@
+{
+  "name": "360sync",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix front-end\""
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0"
+  }
+}
