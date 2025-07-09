@@ -6,7 +6,7 @@ import EditButton from "../components/EditButton";
 import DeleteButton from "../components/DeleteButton";
 import { toast } from "react-toastify";
 import { UserProvider } from "../context/userContext";
-import useUser from "../utils/useUse";
+import useUser from "../hooks/useUse";
 
 
 

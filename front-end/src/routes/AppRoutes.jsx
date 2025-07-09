@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import CreateUser from "../pages/UserForm.jsx";
+import UserForm from "../pages/UserForm.jsx";
 import Home from "../pages/Home.jsx";
 import Dashboard from "../pages/Dashboard.jsx";
 import Finances from "../pages/Finances.jsx";
@@ -13,7 +13,7 @@ function AppRoutes() {
         <Route path="dashBoard" element={<Dashboard/>}/>
         <Route path="finance" element={<Finances/>} />
         <Route path="Users" element={<Users/>} />
-        <Route path="users/create" element={<CreateUser />} />
+        <Route path="users/create" element={<UserForm />} />
       <Route path="*" element={<div>NOT FOUND</div>} />
       
     </Routes>

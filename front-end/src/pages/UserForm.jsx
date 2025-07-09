@@ -1,7 +1,7 @@
 import Form from "../components/Form";
 
 
-function CreateUser() {
+function UserForm() {
     
     return (
         <div>
@@ -9,4 +9,4 @@ function CreateUser() {
         </div>
     )
 }
-export default CreateUser;
+export default UserForm;

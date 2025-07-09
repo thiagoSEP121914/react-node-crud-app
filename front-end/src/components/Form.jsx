@@ -10,7 +10,7 @@ import insertCepMask from "../utils/cepMask";
 import findCep from "../services/viaCep";
 import { createUser, updateUser } from "../services/userApi";
 import { toast } from "react-toastify";
-import useUser from "../utils/useUse";
+import useUser from "../hooks/useUse";
 
 function Form() {
   const { selectedUser } = useUser();
