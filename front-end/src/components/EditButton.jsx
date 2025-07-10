@@ -2,13 +2,15 @@ import { useNavigate } from "react-router-dom";
 import "../style/EditButton.css";
 import { MdModeEdit } from "react-icons/md";
 
-function EditButton({ to , obj}) {
+function EditButton({ to , editMode}) {
   
   const navigate = useNavigate();
 
   const handleEdit = () => {
-    navigate(to, { data: {data:obj}});
+    navigate(to, { state: {editMode: editMode}});
   }
+
+
   return (
     <button className="edit-button" onClick={handleEdit}>
       <MdModeEdit 

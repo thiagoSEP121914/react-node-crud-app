@@ -21,7 +21,7 @@ export class UserDaoImpl implements IUserDao {
 
         try {
             const sql = `
-            SELECT u.cpf, u.nome, u.idade, u.biografia, e.id,
+            SELECT u.cpf, u.nome, u.idade, u.biografia, u.caminho_imagem,e.id,
             e.cep, e.estado, e.cidade, e.bairro, e.rua, e.numero
             FROM usuarios u
             JOIN enderecos e ON u.id_endereco = e.id
@@ -44,7 +44,8 @@ export class UserDaoImpl implements IUserDao {
                     row.nome,
                     row.idade,
                     row.biografia,
-                    endereco
+                    endereco,
+                    row.caminho_imagem ?? ""
                 );
             });
 

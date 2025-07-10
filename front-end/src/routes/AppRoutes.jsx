@@ -1,21 +1,21 @@
 import { Routes, Route } from "react-router-dom";
-import UserForm from "../pages/UserForm.jsx";
 import Home from "../pages/Home.jsx";
 import Dashboard from "../pages/Dashboard.jsx";
 import Finances from "../pages/Finances.jsx";
 import Users from "../pages/UsersTable.jsx";
+import UserForm from "../pages/UserForm.jsx";
 
 function AppRoutes() {
   return (
     <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="home" element = {<Home/>}/>
-        <Route path="dashBoard" element={<Dashboard/>}/>
-        <Route path="finance" element={<Finances/>} />
-        <Route path="Users" element={<Users/>} />
-        <Route path="users/create" element={<UserForm />} />
-      <Route path="*" element={<div>NOT FOUND</div>} />
-      
+      <Route path="/" element={<Home />} />
+      <Route path="home" element={<Home />} />
+      <Route path="dashBoard" element={<Dashboard />} />
+      <Route path="finance" element={<Finances />} />
+      <Route path="Users" element={<Users />} />
+      <Route path="users/create" element={<UserForm />} />
+      <Route path="user/e" />
+      <Route path="users/:cpf/edit" element={<UserForm />} />
     </Routes>
   );
 }
