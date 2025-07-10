@@ -1,6 +1,7 @@
 import { Endereco } from '../entities/endereco';
 import { Request, Response } from "express";
 import { EnderecoService } from "../service/enderecoService";
+import { NotFoundError } from '../exception/notFoudError';
 
 
 export class EnderecoController {

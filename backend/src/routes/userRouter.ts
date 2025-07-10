@@ -1,6 +1,7 @@
 import { User } from './../entities/user';
 import { UserController } from './../controller/userController';
 import { Router } from "express";
+import { upload } from '../middleware/upload';
 
 const router = Router();
 const userControler =  new UserController();
