@@ -98,8 +98,8 @@ Aqui você pode adicionar prints de tela para ilustrar a interface do seu projet
 
 
 
-![Tela inicial](screenShot/tela_inicial)
+![Tela inicial](screenShots/tela_inicial.png)
 
-![Tela de Cadastro](screenShot/cadastro.png)
+![Tela de Cadastro](screenShots/cadastro.png)
 
-![Tela de Listagem](screenShot/listagem.png)
+![Tela de Listagem](screenShots/listagem.png)
