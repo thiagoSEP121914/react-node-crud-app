@@ -12,12 +12,7 @@ import { createUser, getUserByCpf, updateUser } from "../services/userApi";
 import { toast } from "react-toastify";
 import { useLocation, useParams } from "react-router-dom";
 
-
-
-
-
 function UserForm() {
-  
   const location = useLocation();
   const editMode = location.state?.editMode || false;
   const { cpf: cpfFromRouter } = useParams();
@@ -63,16 +58,29 @@ function UserForm() {
     setIdade(newValue);
   };
 
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      setImage(reader.result);
+    };
+    reader.readAsDataURL(file);
+  };
+
+const handlerCepChange = (event) => {
+    const value = event.target.value;
+    const masked = insertCepMask(value);
+    setCep(masked);
+  };
+
+
   const handleNumeroChange = (event) => {
     const newValue = event.target.value;
     setNumero(newValue);
   };
 
-  const handlerCepChange = (event) => {
-    const value = event.target.value;
-    const masked = insertCepMask(value);
-    setCep(masked);
-  };
 
   const handleCepBlur = async () => {
     fillEnderecoWithData();
@@ -103,17 +111,6 @@ function UserForm() {
     setBiografia(newValue);
   };
 
-  const handleImageChange = (event) => {
-    const file = event.target.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = () => {
-      setImage(reader.result);
-    };
-    reader.readAsDataURL(file);
-  };
-
   const fillEnderecoWithData = async () => {
     try {
       const data = await findCep(cep);
@@ -130,7 +127,7 @@ function UserForm() {
     try {
       const response = await getUserByCpf(cpfFromRouter);
       const user = response.data;
-      console.log("log de user:" ,JSON.stringify(user, null, 2));
+      console.log("log de user:", JSON.stringify(user, null, 2));
 
       setSelectedUser(user);
       setImage(user.caminhoImagem);
@@ -214,7 +211,7 @@ function UserForm() {
       }
 
       const user = instantiateUser();
-   
+
       if (selectedUser) {
         await updateUser(selectedUser.cpf, user);
         toast.success("Usuario Atualizado com sucesso!");
@@ -231,7 +228,6 @@ function UserForm() {
       console.log(`Erro: ${message} + `);
     }
   };
-
 
   useEffect(() => {
     if (editMode && cpfFromRouter) {

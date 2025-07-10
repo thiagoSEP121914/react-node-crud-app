@@ -95,3 +95,11 @@ O frontend (interface React) rodando com Vite (ex: na porta 5173)
 ### 6. Imagens do sistema
 🖼️ Imagens do sistema
 Aqui você pode adicionar prints de tela para ilustrar a interface do seu projeto. Exemplo:
+
+
+
+![Tela inicial](screenShot/tela_inicial)
+
+![Tela de Cadastro](screenShot/cadastro.png)
+
+![Tela de Listagem](screenShot/listagem.png)
