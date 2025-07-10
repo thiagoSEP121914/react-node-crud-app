@@ -106,7 +106,7 @@ export class UserDaoImpl implements IUserDao {
             user.nome,
             user.idade,
             user.biografia,
-            user.caminho_imagem,
+            user.caminhoImagem,
             user.endereco.id
         ];
 
@@ -129,7 +129,7 @@ export class UserDaoImpl implements IUserDao {
             user.nome,
             user.idade,
             user.biografia,
-            user.caminho_imagem || null,
+            user.caminhoImagem || null,
             user.endereco.id,
             user.cpf
         ];

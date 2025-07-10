@@ -130,10 +130,10 @@ function UserForm() {
     try {
       const response = await getUserByCpf(cpfFromRouter);
       const user = response.data;
-      user.caminhoImage = user.caminho_imagem;
+      console.log("log de user:" ,JSON.stringify(user, null, 2));
 
       setSelectedUser(user);
-      setImage(user.caminhoImage);
+      setImage(user.caminhoImagem);
       setCpf(insertCpfMask(user.cpf) || "");
       setNome(user.nome || "");
       setIdade(user.idade?.toString() || "");
@@ -193,7 +193,7 @@ function UserForm() {
       cpf: cpf.replace(/\D/g, ""),
       nome,
       idade: Number(idade),
-      caminho_imagem: image,
+      caminhoImagem: image,
       biografia,
       endereco: {
         cep: cep.replace(/\D/g, ""),
@@ -214,8 +214,7 @@ function UserForm() {
       }
 
       const user = instantiateUser();
-      console.log(`Teste vaitomasr no cu: ${JSON.stringify(user, null, 2)}`);
-
+   
       if (selectedUser) {
         await updateUser(selectedUser.cpf, user);
         toast.success("Usuario Atualizado com sucesso!");

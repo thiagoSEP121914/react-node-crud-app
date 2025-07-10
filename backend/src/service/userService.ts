@@ -9,11 +9,11 @@ export class UserService {
 
     private enderecoRepository = DaoFactory.createEnderecoDao();
 
-    public findAll(): Promise<User[]> {
+    public async findAll(): Promise<User[]> {
         return this.userRepository.findAll();
     }
 
-    public findByCpf(cpf: string): Promise<User | null> {
+    public async findByCpf(cpf: string): Promise<User | null> {
         return this.userRepository.findByCpf(cpf);
     }
 

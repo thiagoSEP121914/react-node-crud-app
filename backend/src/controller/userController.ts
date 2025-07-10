@@ -51,7 +51,7 @@ export class UserController {
 
     public async save(req: Request, res: Response) {
         try {
-            const { cpf, nome, idade, biografia, caminho_imagem, endereco } = req.body;
+            const { cpf, nome, idade, biografia, caminhoImagem, endereco } = req.body;
 
             if (!cpf || !nome || !idade || !endereco) {
                 return res.status(400).json({
@@ -79,7 +79,7 @@ export class UserController {
                 idade,
                 biografia,
                 enderecoInstance,
-                caminho_imagem ?? ""
+                caminhoImagem ?? ""
             );
 
             const id = await this.useService.save(user);
@@ -101,7 +101,7 @@ export class UserController {
                 return res.status(400).json({ error: "CPF inválido para atualização" });
             }
 
-            const { nome, idade, biografia, endereco, caminho_imagem, } = req.body;
+            const { nome, idade, biografia, endereco, caminhoImagem, } = req.body;
 
             if (!nome || !idade || !endereco) {
                 return res.status(400).json({
@@ -125,7 +125,7 @@ export class UserController {
                 idade,
                 biografia,
                 enderecoInstance,
-                caminho_imagem ?? ""
+                caminhoImagem ?? ""
             );
 
             const updatedUser = await this.useService.update(user);

@@ -9,6 +9,6 @@ export class User {
         public idade: number,
         public biografia: string,
         public endereco: Endereco,
-        public caminho_imagem?: string
+        public caminhoImagem?: string
     ) {}
 }
